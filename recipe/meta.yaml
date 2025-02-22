@@ -1,5 +1,6 @@
 {% set versions = {
-    "HEAD": "HEAD"
+    "HEAD": "HEAD",
+    "0.1": "62785b051c1bfde01d33b3c679a7e33cecdd4bb8"
 } %}
 
 {% set version = environ.get('COMMIT_VERSION', None) %}
@@ -12,7 +13,7 @@ package:
 
 source:
   git_url: "https://git.ligo.org/kagra/libraries-addons/root/framel"
-  git_rev: {{ version }}
+  git_rev: "v{{ version }}"
 
 requirements:
   build:
