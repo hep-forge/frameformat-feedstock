@@ -11,7 +11,7 @@ package:
   version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
 
 source:
-  git_url: "https://git.ligo.org/kagra/libraries-addons/root/frameformat"
+  git_url: "https://git.ligo.org/kagra/libraries-addons/root/framel"
   git_rev: {{ version }}
 
 requirements:
@@ -35,7 +35,7 @@ requirements:
     - framel
 
 about:
-  home: "https://git.ligo.org/kagra/libraries-addons/root/frameformat"
+  home: "https://git.ligo.org/kagra/libraries-addons/root/framel"
   license: "GPL-3.0"
   summary: "Frame Format Library"
   description: |
