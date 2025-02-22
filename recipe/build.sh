@@ -8,7 +8,7 @@ cd ..
 
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_C_STANDARD=17 -DCMAKE_CXX_STANDARD=17 
+cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX
 
 make -j$(nproc)
 make install
