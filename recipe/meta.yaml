@@ -13,7 +13,7 @@ package:
 
 source:
   git_url: "https://git.ligo.org/kagra/libraries-addons/root/framel"
-  git_rev: "v{{ version }}"
+  git_rev: "{{ version }}"
 
 requirements:
   build:
