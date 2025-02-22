@@ -1,6 +1,6 @@
 {% set versions = {
     "HEAD": "HEAD",
-    "0.1": "128c70cefb35d62a9b37f6eaaeb527862c184c98"
+    "0.1": "29bec103832ea93c37fd68d71e3555c47df26219"
 } %}
 
 {% set version = environ.get('COMMIT_VERSION', None) %}
