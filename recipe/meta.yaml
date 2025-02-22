@@ -1,0 +1,44 @@
+{% set versions = {
+    "HEAD": "HEAD"
+} %}
+
+{% set version = environ.get('COMMIT_VERSION', None) %}
+{% set version = version or versions.keys()|first %}
+{% set version = version|string %}
+
+package:
+  name: {{ environ.get('ANACONDA_PACKAGE', "frameformat")|string|lower }}
+  version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
+
+source:
+  git_url: "https://git.ligo.org/kagra/libraries-addons/root/frameformat"
+  git_rev: {{ version }}
+
+requirements:
+  build:
+    - {{ compiler('cxx') }} # [linux]
+    - {{ compiler('c') }}   # [linux]
+    - {{ stdlib('c') }}
+
+    - clang
+    - cmake
+    - make
+
+    - cuda-nvcc
+
+  host:
+    - root-plus
+
+  run:
+    - root-plus
+
+about:
+  home: "https://git.ligo.org/kagra/libraries-addons/root/frameformat"
+  license: "GPL-3.0"
+  summary: "Frame Format Library"
+  description: |
+    Frame format library is an ROOT adapter to read GWF files using FrameL library include multithreading
+
+extra:
+  recipe-maintainers:
+    - meiyasan
