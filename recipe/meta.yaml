@@ -28,9 +28,11 @@ requirements:
 
   host:
     - root-plus
+    - framel
 
   run:
     - root-plus
+    - framel
 
 about:
   home: "https://git.ligo.org/kagra/libraries-addons/root/frameformat"
