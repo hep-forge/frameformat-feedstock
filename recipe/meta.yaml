@@ -15,6 +15,16 @@ source:
   git_url: "https://git.ligo.org/kagra/libraries-addons/root/framel"
   git_rev: "{{ version }}"
 
+build:
+  # ADD_ROOT_LIBRARY() (root-plus's shared cmake/Modules/RootFramework.cmake)
+  # installs a precompiled Clang module cache (lib/*.pcm) for each library
+  # this recipe builds. conda-build's default prefix-relocation does a
+  # naive text substitution on every installed file it doesn't know to
+  # skip, which corrupts that binary format. Same fix as root-feedstock
+  # and root-plus-feedstock use for the identical artifact.
+  ignore_prefix_files:
+    - lib/*.pcm
+
 requirements:
   build:
     - {{ compiler('cxx') }} # [linux]
